@@ -1,6 +1,6 @@
-# The AStA Fulda Version of the Docker Wordpress-Image
+# The AStA Fulda version of the docker Wordpress-Image
 
-This Version is based on the apache 7 Version of the official docker image with the use of the popular [wordpress-cli tool](https://wp-cli.org).
+This Version is based on the apache 7.0 Version of the official docker image with the use of the popular [wordpress-cli tool](https://wp-cli.org).
 
 # How to use this image
 
