@@ -36,7 +36,7 @@ $ docker run --name some-wordpress -e WORDPRESS_DB_HOST=10.1.2.3:3306 \
 
 ## ... via [`docker-compose`](https://github.com/docker/compose)
 
-Example `docker-compose.yml` for `wordpress`:
+Example `docker-compose.yml` for `astafulda/wordpress`:
 
 ```yaml
 version: '2'
@@ -44,7 +44,7 @@ version: '2'
 services:
 
   wordpress:
-    image: wordpress
+    image: astafulda/wordpress
     ports:
       - 8080:80
     environment:
