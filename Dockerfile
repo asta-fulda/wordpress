@@ -35,7 +35,8 @@ RUN wp core download --path=/usr/src/wordpress --locale=$wp_locale --version=$wp
 	&& chown -R www-data:www-data /usr/src/wordpress
 
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compatibility
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
+	&& ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compatibility
 
 WORKDIR /var/www/html
 
