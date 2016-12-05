@@ -52,7 +52,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	# handle WordPress upgrades magically with wp-cli
 	# can be set through env on runtime or arg on build time
 	# defaults to WP_VERSION=latest
-	if $(wp core is-installed); then
+	if [ $(wp core is-installed) ]; then
 		wp core update --version=$WP_VERSION
 
 		# update all plugins
@@ -61,7 +61,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		# install plugins provided in the WORDPRESS_PLUGINS env variable
 		if [ "$WORDPRESS_PLUGINS" ]; then
 			for $plugin in $WORDPRESS_PLUGINS; do 
-				if ! $(wp plugin is-installed ${plugin}); then
+				if [ ! $(wp plugin is-installed ${plugin}) ]; then
 					wp plugin install $plugin
 				fi
 			done 
