@@ -40,5 +40,5 @@ VOLUME /var/www/html
 WORKDIR /var/www/html
 
 # ENTRYPOINT resets CMD
-ENTRYPOINT ["docker-entrypoint"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
