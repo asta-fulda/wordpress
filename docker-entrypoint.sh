@@ -3,7 +3,7 @@ set -e
 
 # Alias for WP-cli to include arguments that we want to use everywhere
 shopt -s expand_aliases
-alias wp="wp --path=$DOCUMENT_ROOT --allow-root"
+alias wp="wp --path=/var/www/html --allow-root"
 
 if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	: "${WORDPRESS_DB_HOST:=mysql}"
